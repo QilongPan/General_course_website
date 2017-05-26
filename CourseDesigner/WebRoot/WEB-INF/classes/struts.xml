@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts-default.xml"/>
+	<package name="struts2_login" extends="struts-default" namespace="/login">
+		<action name="checkLogin" class="action.CheckLogin" method="execute">
+			<result name="success">/jsp/adminManage.jsp</result>
+			<result name="input">/jsp/login.jsp</result>
+		</action>
+		
+		<action name="displayCourseInfo" class="action.DisplayCourseInfo" method="display">
+			<result name="success">/jsp/index.jsp</result>
+			<result name="input">/jsp/error.jsp</result>
+		</action>
+		<action name="viewArtical" class="action.ViewArtical" method="execute">
+			<result>/jsp/adminManage.jsp</result>
+		</action>
+		
+		<action name="getCheckCode" class="action.GetCheckCode" method="randomCheckCode">
+			<result>/jsp/login.jsp</result>
+		</action>
+		
+		<action name="deleteArticle" class="action.DeleteArticle" method="delete">
+			<result name="success">/jsp/adminManage.jsp</result>
+		</action>
+		
+		<action name="selectArticleById" class="action.SelectArticleById" method="select">
+			<result name="success">/jsp/watch.jsp</result>
+			<result name="login">/jsp/adminManage.jsp</result>
+		</action>
+		
+		<action name="updateArticle" class="action.UpdateArticle" method ="update">
+			<result name="success">/jsp/articleUpdate.jsp</result>
+			<result name="login">/jsp/adminManage.jsp</result>
+		</action>
+		
+		<action name="updateArticles" class="action.UpdateArticles" method="update_save">
+			<result name="success">/jsp/adminManage.jsp</result>
+			<result name="login">/jsp/error.jsp</result>
+		</action>
+	</package>
+</struts>    
